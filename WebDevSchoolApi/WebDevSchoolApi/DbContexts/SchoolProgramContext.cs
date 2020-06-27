@@ -60,6 +60,7 @@ namespace WebDevSchoolApi.DbContexts
                     SchoolId = Guid.Parse("2902b665-1190-4c70-9915-b9c2d7680450")
                 }
                 );
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

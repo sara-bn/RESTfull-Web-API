@@ -7,11 +7,11 @@ using WebDevSchoolApi.Entities;
 
 namespace WebDevSchoolApi.Services
 {
-    public class SchoolPrpgramRepository : ISchoolProgramRepository
+    public class SchoolProgramRepository : ISchoolProgramRepository
     {
         private readonly SchoolProgramContext _context;
 
-        public SchoolPrpgramRepository(SchoolProgramContext context)
+        public SchoolProgramRepository(SchoolProgramContext context)
         {
             _context = context;
         }

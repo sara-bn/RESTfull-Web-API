@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebDevSchoolApi.DbContexts;
+using WebDevSchoolApi.Services;
+using AutoMapper;
 
 namespace WebDevSchoolApi
 {
@@ -29,11 +31,17 @@ namespace WebDevSchoolApi
         {
             services.AddControllers();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddScoped<ISchoolProgramRepository, SchoolProgramRepository>();
+
             services.AddDbContext<SchoolProgramContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             }
             );
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
